@@ -1,0 +1,38 @@
+import random
+import time
+from typing_extensions import clear_overloads
+
+p1 = input('p1 making a bet(1-9): ')
+p2 = input('p2 making a bet(1-9): ')
+p1_points = 0
+p2_points = 0
+
+def main_text(random):
+  print('*Refery dropping the dices*')
+  time.sleep(2)
+  print('*Dices are rolling*')
+  time.sleep(4)
+  print('*Dices are stopped...*')
+  time.sleep(3)
+  time.sleep(2)
+  print('*Players shows their bets*')
+
+def game(player1, player2, random, p1p, p2p):
+  print(f'*P1 has {player1}*')
+  time.sleep(3)
+  print(f'*P2 has {player2}*')
+  time.sleep(3)
+  print('Refery: and winner is...')
+  time.sleep(5)
+  if player1 == random:
+    print('Refery: P1 is the winner!')
+    p1p += 1
+  elif player2 == random:
+    print('Refery: P2 is the winner!')
+    p2p += 1
+  else:
+    print('*Refery: no one wins!*')
+    print('Game Over!')
+
+main_text(random=random.randint(1,9))
+game(player1=p1, player2=p2, random=random.randint(1,9),p1p=p1_points, p2p=p2_points)
